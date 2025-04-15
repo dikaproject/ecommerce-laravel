@@ -20,7 +20,7 @@
                 </a>
                 
                 @foreach($services as $service)
-                    <a href="{{ route('portfolios.index', ['service_id' => $service->id]) }}" class="filter-btn {{ request('service_id') == $service->id ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-indigo-600 hover:text-white' }} py-2 px-6 rounded-full font-medium transition">
+                    <a href="{{ route('portfolios.by-service', $service) }}" class="filter-btn {{ request()->route('service') && request()->route('service')->id == $service->id ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-indigo-600 hover:text-white' }} py-2 px-6 rounded-full font-medium transition">
                         {{ $service->name }}
                     </a>
                 @endforeach

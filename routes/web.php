@@ -41,7 +41,7 @@ Route::get('/services/{service}', [ServiceController::class, 'show'])->name('ser
 // Public Portfolio Routes
 Route::get('/portfolios', [PortofolioController::class, 'index'])->name('portfolios.index');
 Route::get('/portfolios/{portofolio}', [PortofolioController::class, 'show'])->name('portfolios.show');
-Route::get('/services/{service}/portfolios', [PortofolioController::class, 'byService'])->name('portfolios.by-service');
+Route::get('/portfolios/service/{service}', [PortofolioController::class, 'byService'])->name('portfolios.by-service');
 
 // Midtrans Callback
 Route::post('/payments/midtrans-callback', [OrderController::class, 'callback'])->name('payments.callback');

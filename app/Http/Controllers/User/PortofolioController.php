@@ -12,7 +12,8 @@ class PortofolioController extends Controller
     public function index()
     {
         $portofolios = Portofolio::with('service')->latest()->paginate(12);
-        return view('user.portofolios.index', compact('portofolios'));
+        $services = \App\Models\Service::all(); // Add this line to fetch all services
+        return view('user.portofolios.index', compact('portofolios', 'services'));
     }
     
     public function show(Portofolio $portofolio)
