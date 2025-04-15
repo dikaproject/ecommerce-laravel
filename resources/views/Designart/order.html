@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Jasa - DesignArt Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+        .file-upload-label {
+            cursor: pointer;
+        }
+        .file-upload-label:hover {
+            background-color: #EEF2FF;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 fixed w-full z-50">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">DesignArt Studio</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="services.html" class="text-gray-700 hover:text-indigo-600 transition">Layanan</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-600 transition">Portofolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Kontak</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-inner">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="services.html" class="text-gray-700 hover:text-indigo-600 transition">Layanan</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-600 transition">Portofolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Pesan Jasa Desain</h1>
+            <p class="text-xl max-w-3xl mx-auto">Isi formulir pemesanan di bawah untuk memulai proyek desain Anda bersama kami</p>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- Order Progress -->
+                <div class="bg-gray-50 py-6 px-8 border-b">
+                    <div class="flex items-center justify-between">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-semibold">1</div>
+                            <span class="text-indigo-600 font-medium mt-2">Pilih Layanan</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-gray-300 mx-4 relative">
+                            <div class="absolute inset-0 bg-indigo-600 w-1/3"></div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-500 font-semibold">2</div>
+                            <span class="text-gray-500 font-medium mt-2">Detail Pesanan</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-gray-300 mx-4"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-500 font-semibold">3</div>
+                            <span class="text-gray-500 font-medium mt-2">Pembayaran</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <form id="orderForm" class="p-8">
+                    <!-- Step 1: Service Selection -->
+                    <div id="step1" class="space-y-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Pilih Layanan</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Service Option 1 -->
+                            <div class="service-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition" data-service="video">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-video text-xl text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold mb-1">Jasa Video Konten</h3>
+                                        <p class="text-gray-600 text-sm">Video konten menarik untuk sosial media dan promosi</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Option 2 -->
+                            <div class="service-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition" data-service="content">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-paint-brush text-xl text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold mb-1">Jasa Desain Konten</h3>
+                                        <p class="text-gray-600 text-sm">Desain konten visual untuk sosial media dan digital</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Option 3 -->
+                            <div class="service-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition" data-service="poster">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-images text-xl text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold mb-1">Desain Poster</h3>
+                                        <p class="text-gray-600 text-sm">Poster menarik untuk promosi, event, dan marketing</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Option 4 -->
+                            <div class="service-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition" data-service="ppt">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-laptop-code text-xl text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold mb-1">Desain Presentasi PPT</h3>
+                                        <p class="text-gray-600 text-sm">Presentasi PowerPoint profesional untuk bisnis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Package Selection -->
+                        <div class="mt-8">
+                            <h3 class="text-lg font-semibold mb-4">Pilih Paket</h3>
+                            
+                            <!-- Video Package Options (initially hidden) -->
+                            <div id="video-packages" class="package-options hidden space-y-4">
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">Basic Package</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Video durasi 60 detik</li>
+                                                <li>• Musik background</li>
+                                                <li>• 2 kali revisi</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 1.500.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">Standard Package</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Video durasi 120 detik</li>
+                                                <li>• Musik custom</li>
+                                                <li>• Voice over</li>
+                                                <li>• 3 kali revisi</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 3.000.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">Premium Package</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Video durasi 180 detik</li>
+                                                <li>• Musik custom</li>
+                                                <li>• Voice over profesional</li>
+                                                <li>• Motion graphics</li>
+                                                <li>• 5 kali revisi</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 5.000.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Content Package Options (initially hidden) -->
+                            <div id="content-packages" class="package-options hidden space-y-4">
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">5 Desain</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 5 desain konten</li>
+                                                <li>• Format JPG/PNG</li>
+                                                <li>• 2 kali revisi per desain</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 750.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">10 Desain</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 10 desain konten</li>
+                                                <li>• Format JPG/PNG</li>
+                                                <li>• 3 kali revisi per desain</li>
+                                                <li>• Template feed Instagram</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 1.400.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">20 Desain</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 20 desain konten</li>
+                                                <li>• Format JPG/PNG/PSD</li>
+                                                <li>• 5 kali revisi per desain</li>
+                                                <li>• Template feed Instagram</li>
+                                                <li>• Konsultasi strategi konten</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 2.500.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Poster Package Options (initially hidden) -->
+                            <div id="poster-packages" class="package-options hidden space-y-4">
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">Basic Design</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 1 desain poster</li>
+                                                <li>• Format JPG/PNG</li>
+                                                <li>• 2 kali revisi</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 500.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">Standard Design</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 1 desain poster</li>
+                                                <li>• Format JPG/PNG/PDF</li>
+                                                <li>• 3 kali revisi</li>
+                                                <li>• File PSD/AI</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 800.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">Premium Design</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 1 desain poster</li>
+                                                <li>• Format JPG/PNG/PDF</li>
+                                                <li>• 5 kali revisi</li>
+                                                <li>• File PSD/AI</li>
+                                                <li>• Konsultasi design brief</li>
+                                                <li>• Ukuran adaptasi (3 variasi)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 1.200.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- PPT Package Options (initially hidden) -->
+                            <div id="ppt-packages" class="package-options hidden space-y-4">
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">10 Slides</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 10 slide PowerPoint</li>
+                                                <li>• Format PPT/PPTX</li>
+                                                <li>• 2 kali revisi</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 800.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">20 Slides</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 20 slide PowerPoint</li>
+                                                <li>• Format PPT/PPTX</li>
+                                                <li>• 3 kali revisi</li>
+                                                <li>• Template custom</li>
+                                                <li>• Infografis dasar</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 1.500.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-option border-2 border-gray-200 hover:border-indigo-500 rounded-lg p-6 cursor-pointer transition">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-semibold mb-2">30 Slides</h4>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 30 slide PowerPoint</li>
+                                                <li>• Format PPT/PPTX</li>
+                                                <li>• 5 kali revisi</li>
+                                                <li>• Template custom</li>
+                                                <li>• Infografis kompleks</li>
+                                                <li>• Animasi slide</li>
+                                                <li>• Konsultasi konten</li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-lg font-bold text-indigo-600">Rp 2.000.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <button type="button" id="nextToStep2" class="bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition">Lanjutkan</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Order Details -->
+                    <div id="step2" class="space-y-8 hidden">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Detail Pesanan</h2>
+                        
+                        <!-- Personal Information -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold">Informasi Pribadi</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Nomor Telepon</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="company" class="block text-gray-700 font-medium mb-2">Perusahaan (opsional)</label>
+                                    <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Details -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold">Detail Proyek</h3>
+                            
+                            <div>
+                                <label for="project_title" class="block text-gray-700 font-medium mb-2">Judul Proyek</label>
+                                <input type="text" id="project_title" name="project_title" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="project_description" class="block text-gray-700 font-medium mb-2">Deskripsi Proyek</label>
+                                <textarea id="project_description" name="project_description" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required placeholder="Jelaskan detail proyek Anda, termasuk tujuan, referensi, dan detail khusus yang Anda inginkan."></textarea>
+                            </div>
+                            
+                            <div>
+                                <label for="deadline" class="block text-gray-700 font-medium mb-2">Deadline</label>
+                                <input type="date" id="deadline" name="deadline" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Reference Upload -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold">Upload Referensi</h3>
+                            
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-8">
+                                <div class="text-center">
+                                    <label for="reference_files" class="file-upload-label block">
+                                        <div class="mx-auto w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                                            <i class="fas fa-upload text-2xl text-indigo-600"></i>
+                                        </div>
+                                        <h4 class="text-lg font-medium mb-2">Upload File Referensi</h4>
+                                        <p class="text-gray-500 text-sm mb-4">Upload logo, brand guidelines, atau referensi lain untuk desain Anda</p>
+                                        <span class="bg-indigo-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-indigo-700 transition">Pilih File</span>
+                                        <input type="file" id="reference_files" name="reference_files" class="hidden" multiple>
+                                    </label>
+                                    <div id="file_list" class="mt-4 text-left"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery Method -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold">Metode Pengiriman</h3>
+                            
+                            <div class="flex space-x-4">
+                                <label class="delivery-option flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+                                    <input type="radio" name="delivery_method" value="email" class="mr-3" checked>
+                                    <div>
+                                        <h4 class="font-medium">Email</h4>
+                                        <p class="text-gray-500 text-sm">Hasil akan dikirim ke email Anda</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="delivery-option flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+                                    <input type="radio" name="delivery_method" value="whatsapp" class="mr-3">
+                                    <div>
+                                        <h4 class="font-medium">WhatsApp</h4>
+                                        <p class="text-gray-500 text-sm">Hasil akan dikirim via WhatsApp</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-between">
+                            <button type="button" id="backToStep1" class="bg-gray-200 text-gray-700 py-3 px-8 rounded-lg font-medium hover:bg-gray-300 transition">Kembali</button>
+                            <button type="button" id="nextToStep3" class="bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition">Lanjutkan ke Pembayaran</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Payment -->
+                    <div id="step3" class="space-y-8 hidden">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Pembayaran</h2>
+                        
+                        <!-- Order Summary -->
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold mb-4">Ringkasan Pesanan</h3>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Layanan</span>
+                                    <span class="font-semibold" id="summary-service">Jasa Video Konten</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Paket</span>
+                                    <span class="font-semibold" id="summary-package">Basic Package</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Harga</span>
+                                    <span class="font-semibold" id="summary-price">Rp 1.500.000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Metode Pengiriman</span>
+                                    <span class="font-semibold" id="summary-delivery">Email</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-t border-gray-300 pt-4 mt-4">
+                                <div class="flex justify-between">
+                                    <span class="text-lg font-bold">Total</span>
+                                    <span class="text-lg font-bold text-indigo-600" id="summary-total">Rp 1.500.000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Method -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold">Metode Pembayaran</h3>
+                            
+                            <div class="space-y-4">
+                                <label class="payment-option flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+                                    <input type="radio" name="payment_method" value="qris" class="mr-3" checked>
+                                    <div class="flex items-center justify-between w-full">
+                                        <div>
+                                            <h4 class="font-medium">QRIS</h4>
+                                            <p class="text-gray-500 text-sm">Bayar dengan scan QR Code</p>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <div class="w-10 h-6 bg-gray-200 rounded"></div>
+                                            <div class="w-10 h-6 bg-gray-200 rounded"></div>
+                                            <div class="w-10 h-6 bg-gray-200 rounded"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="payment-option flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+                                    <input type="radio" name="payment_method" value="bank_transfer" class="mr-3">
+                                    <div class="flex items-center justify-between w-full">
+                                        <div>
+                                            <h4 class="font-medium">Transfer Bank</h4>
+                                            <p class="text-gray-500 text-sm">Bayar via transfer bank</p>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <div class="w-10 h-6 bg-gray-200 rounded"></div>
+                                            <div class="w-10 h-6 bg-gray-200 rounded"></div>
+                                            <div class="w-10 h-6 bg-gray-200 rounded"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <!-- Bank Transfer Options -->
+                            <div id="bank_options" class="space-y-3 mt-4 hidden">
+                                <label class="bank-option flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-indigo-300 transition">
+                                    <input type="radio" name="bank" value="bca" class="mr-3" checked>
+                                    <span>Bank BCA</span>
+                                </label>
+                                <label class="bank-option flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-indigo-300 transition">
+                                    <input type="radio" name="bank" value="mandiri" class="mr-3">
+                                    <span>Bank Mandiri</span>
+                                </label>
+                                <label class="bank-option flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-indigo-300 transition">
+                                    <input type="radio" name="bank" value="bni" class="mr-3">
+                                    <span>Bank BNI</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Terms and Conditions -->
+                        <div class="space-y-4">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" name="terms" class="mt-1 mr-3" required>
+                                <span class="text-gray-600 text-sm">Dengan ini saya menyetujui <a href="#" class="text-indigo-600 hover:underline">Syarat dan Ketentuan</a> serta <a href="#" class="text-indigo-600 hover:underline">Kebijakan Privasi</a> yang berlaku.</span>
+                            </label>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-between">
+                            <button type="button" id="backToStep2" class="bg-gray-200 text-gray-700 py-3 px-8 rounded-lg font-medium hover:bg-gray-300 transition">Kembali</button>
+                            <button type="submit" id="placeOrder" class="bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition">Bayar Sekarang</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">DesignArt Studio</h3>
+                    <p class="text-gray-400 mb-4">Solusi desain kreatif untuk meningkatkan brand dan bisnis Anda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Layanan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#video" class="text-gray-400 hover:text-white transition">Jasa Video Konten</a></li>
+                        <li><a href="services.html#content" class="text-gray-400 hover:text-white transition">Jasa Desain Konten</a></li>
+                        <li><a href="services.html#poster" class="text-gray-400 hover:text-white transition">Desain Poster</a></li>
+                        <li><a href="services.html#ppt" class="text-gray-400 hover:text-white transition">Desain Presentasi PPT</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">Profil Perusahaan</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-white transition">Tim Kami</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition">Portofolio</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hubungi Kami</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">Jl. Kreatif No. 123, Jakarta Selatan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">info@designartstudio.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2025 DesignArt Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Form Step Navigation
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const step3 = document.getElementById('step3');
+        
+        // Service Selection
+        const serviceOptions = document.querySelectorAll('.service-option');
+        const packageOptions = document.querySelectorAll('.package-options');
+        
+        let selectedService = 'video';
+        let selectedPackage = 'Basic Package';
+        let selectedPrice = 'Rp 1.500.000';
+        
+        // Show Video Packages by default
+        document.getElementById('video-packages').classList.remove('hidden');
+        
+        serviceOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Reset all service options
+                serviceOptions.forEach(opt => opt.classList.remove('border-indigo-500'));
+                
+                // Select current option
+                this.classList.add('border-indigo-500');
+                
+                // Hide all package options
+                packageOptions.forEach(pkg => pkg.classList.add('hidden'));
+                
+                // Show packages for selected service
+                selectedService = this.dataset.service;
+                document.getElementById(`${selectedService}-packages`).classList.remove('hidden');
+                
+                // Update summary
+                updateServiceSummary();
+            });
+        });
+        
+        // Package Selection
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.package-option')) {
+                const packageOption = e.target.closest('.package-option');
+                
+                // Reset all package options in the current visible package group
+                const visiblePackageGroup = document.querySelector('.package-options:not(.hidden)');
+                visiblePackageGroup.querySelectorAll('.package-option').forEach(opt => {
+                    opt.classList.remove('border-indigo-500');
+                });
+                
+                // Select current option
+                packageOption.classList.add('border-indigo-500');
+                
+                // Update selected package and price
+                selectedPackage = packageOption.querySelector('h4').textContent;
+                selectedPrice = packageOption.querySelector('.text-indigo-600').textContent;
+                
+                // Update summary
+                updateServiceSummary();
+            }
+        });
+        
+        // Update Order Summary
+        function updateServiceSummary() {
+            // Map service codes to display names
+            const serviceNames = {
+                'video': 'Jasa Video Konten',
+                'content': 'Jasa Desain Konten',
+                'poster': 'Desain Poster',
+                'ppt': 'Desain Presentasi PPT'
+            };
+            
+            document.getElementById('summary-service').textContent = serviceNames[selectedService];
+            document.getElementById('summary-package').textContent = selectedPackage;
+            document.getElementById('summary-price').textContent = selectedPrice;
+            document.getElementById('summary-total').textContent = selectedPrice;
+        }
+        
+        // File Upload Preview
+        document.getElementById('reference_files').addEventListener('change', function(e) {
+            const fileList = document.getElementById('file_list');
+            fileList.innerHTML = '';
+            
+            for (let i = 0; i < this.files.length; i++) {
+                const file = this.files[i];
+                const fileItem = document.createElement('div');
+                fileItem.className = 'flex items-center justify-between py-2';
+                fileItem.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fas fa-file-alt text-indigo-600 mr-2"></i>
+                        <span class="text-sm">${file.name}</span>
+                    </div>
+                    <span class="text-xs text-gray-500">${(file.size / 1024).toFixed(1)} KB</span>
+                `;
+                fileList.appendChild(fileItem);
+            }
+        });
+        
+        // Delivery Method Selection
+        const deliveryOptions = document.querySelectorAll('.delivery-option');
+        
+        deliveryOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                deliveryOptions.forEach(opt => opt.classList.remove('border-indigo-500'));
+                this.classList.add('border-indigo-500');
+                
+                document.getElementById('summary-delivery').textContent = this.querySelector('h4').textContent;
+            });
+        });
+        
+        // Payment Method Selection
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const bankOptions = document.getElementById('bank_options');
+        
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                paymentOptions.forEach(opt => opt.classList.remove('border-indigo-500'));
+                this.classList.add('border-indigo-500');
+                
+                if (this.querySelector('input').value === 'bank_transfer') {
+                    bankOptions.classList.remove('hidden');
+                } else {
+                    bankOptions.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Step Navigation
+        document.getElementById('nextToStep2').addEventListener('click', function() {
+            step1.classList.add('hidden');
+            step2.classList.remove('hidden');
+            
+            // Update progress bar
+            document.querySelector('.bg-indigo-600.w-1/3').classList.remove('w-1/3');
+            document.querySelector('.bg-indigo-600').classList.add('w-2/3');
+            
+            // Update progress indicator
+            document.querySelectorAll('.w-10.h-10')[1].classList.remove('bg-white', 'border-2', 'border-gray-300', 'text-gray-500');
+            document.querySelectorAll('.w-10.h-10')[1].classList.add('bg-indigo-600', 'text-white');
+            document.querySelectorAll('.text-gray-500.font-medium.mt-2')[0].classList.remove('text-gray-500');
+            document.querySelectorAll('.font-medium.mt-2')[1].classList.add('text-indigo-600');
+        });
+        
+        document.getElementById('backToStep1').addEventListener('click', function() {
+            step2.classList.add('hidden');
+            step1.classList.remove('hidden');
+            
+            // Update progress bar
+            document.querySelector('.bg-indigo-600.w-2/3').classList.remove('w-2/3');
+            document.querySelector('.bg-indigo-600').classList.add('w-1/3');
+            
+            // Update progress indicator
+            document.querySelectorAll('.w-10.h-10')[1].classList.add('bg-white', 'border-2', 'border-gray-300', 'text-gray-500');
+            document.querySelectorAll('.w-10.h-10')[1].classList.remove('bg-indigo-600', 'text-white');
+            document.querySelectorAll('.font-medium.mt-2')[1].classList.remove('text-indigo-600');
+            document.querySelectorAll('.font-medium.mt-2')[1].classList.add('text-gray-500');
+        });
+        
+        document.getElementById('nextToStep3').addEventListener('click', function() {
+            step2.classList.add('hidden');
+            step3.classList.remove('hidden');
+            
+            // Update progress bar
+            document.querySelector('.bg-indigo-600.w-2/3').classList.remove('w-2/3');
+            document.querySelector('.bg-indigo-600').classList.add('w-full');
+            
+            // Update progress indicator
+            document.querySelectorAll('.w-10.h-10')[2].classList.remove('bg-white', 'border-2', 'border-gray-300', 'text-gray-500');
+            document.querySelectorAll('.w-10.h-10')[2].classList.add('bg-indigo-600', 'text-white');
+            document.querySelectorAll('.font-medium.mt-2')[2].classList.remove('text-gray-500');
+            document.querySelectorAll('.font-medium.mt-2')[2].classList.add('text-indigo-600');
+        });
+        
+        document.getElementById('backToStep2').addEventListener('click', function() {
+            step3.classList.add('hidden');
+            step2.classList.remove('hidden');
+            
+            // Update progress bar
+            document.querySelector('.bg-indigo-600.w-full').classList.remove('w-full');
+            document.querySelector('.bg-indigo-600').classList.add('w-2/3');
+            
+            // Update progress indicator
+            document.querySelectorAll('.w-10.h-10')[2].classList.add('bg-white', 'border-2', 'border-gray-300', 'text-gray-500');
+            document.querySelectorAll('.w-10.h-10')[2].classList.remove('bg-indigo-600', 'text-white');
+            document.querySelectorAll('.font-medium.mt-2')[2].classList.remove('text-indigo-600');
+            document.querySelectorAll('.font-medium.mt-2')[2].classList.add('text-gray-500');
+        });
+        
+        // Form Submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'transaction.html';
+        });
+        
+        // Pre-select items based on URL parameter
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceType = urlParams.get('service') || urlParams.get('type');
+            
+            if (serviceType) {
+                const serviceOption = document.querySelector(`.service-option[data-service="${serviceType}"]`);
+                if (serviceOption) {
+                    serviceOption.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignArt Studio - Jasa Desain Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 fixed w-full z-50">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">DesignArt Studio</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-indigo-600 font-medium">Home</a>
+                <a href="services.html" class="text-gray-700 hover:text-indigo-600 transition">Layanan</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-600 transition">Portofolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Kontak</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-inner">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-indigo-600 font-medium">Home</a>
+                <a href="services.html" class="text-gray-700 hover:text-indigo-600 transition">Layanan</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-600 transition">Portofolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Solusi Desain Kreatif untuk Bisnis Anda</h1>
+                    <p class="text-xl mb-8">Tingkatkan brand Anda dengan layanan desain profesional dari DesignArt Studio</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="services.html" class="bg-white text-indigo-600 py-3 px-8 rounded-lg font-medium hover:bg-gray-100 transition text-center">Lihat Layanan</a>
+                        <a href="order.html" class="bg-indigo-800 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-900 transition text-center">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="/api/placeholder/600/400" alt="Design Services" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Layanan Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami menyediakan berbagai layanan desain untuk memenuhi kebutuhan bisnis Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Jasa Video Konten</h3>
+                    <p class="text-gray-600 mb-4">Video konten menarik untuk sosial media, promosi, dan kebutuhan digital Anda.</p>
+                    <a href="services.html#video" class="text-indigo-600 hover:text-indigo-800 font-medium">Pelajari Lebih Lanjut &rarr;</a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Jasa Desain Konten</h3>
+                    <p class="text-gray-600 mb-4">Desain konten visual untuk sosial media, website, dan platform digital lainnya.</p>
+                    <a href="services.html#content" class="text-indigo-600 hover:text-indigo-800 font-medium">Pelajari Lebih Lanjut &rarr;</a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-images text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Desain Poster</h3>
+                    <p class="text-gray-600 mb-4">Poster menarik untuk promosi, event, dan kebutuhan marketing offline Anda.</p>
+                    <a href="services.html#poster" class="text-indigo-600 hover:text-indigo-800 font-medium">Pelajari Lebih Lanjut &rarr;</a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Desain Presentasi PPT</h3>
+                    <p class="text-gray-600 mb-4">Presentasi PowerPoint profesional untuk bisnis, pendidikan, dan keperluan lainnya.</p>
+                    <a href="services.html#ppt" class="text-indigo-600 hover:text-indigo-800 font-medium">Pelajari Lebih Lanjut &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mengapa Memilih Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami berkomitmen memberikan layanan desain berkualitas tinggi dengan harga terbaik</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-medal text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Kualitas Terbaik</h3>
+                    <p class="text-gray-600 text-center">Tim desainer profesional kami menghasilkan karya dengan standar industri tertinggi.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-clock text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Pengerjaan Cepat</h3>
+                    <p class="text-gray-600 text-center">Kami menghargai waktu Anda dengan pengerjaan yang tepat waktu dan efisien.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-comments text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Dukungan 24/7</h3>
+                    <p class="text-gray-600 text-center">Tim dukungan pelanggan kami siap membantu Anda kapan saja Anda butuhkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Works Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Portofolio Terbaru</h2>
+                    <p class="text-gray-600">Beberapa proyek terbaru yang telah kami kerjakan</p>
+                </div>
+                <a href="portfolio.html" class="mt-4 md:mt-0 inline-block bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition">Lihat Semua Karya</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/api/placeholder/400/320" alt="Portofolio 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Video Promosi Travel</h3>
+                        <p class="text-gray-600 mb-4">Video promosi untuk perusahaan travel dengan konsep cinematic dan storytelling menarik.</p>
+                        <a href="order.html" class="inline-block bg-indigo-600 text-white py-2 px-6 rounded-lg font-medium hover:bg-indigo-700 transition">Pesan Serupa</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/api/placeholder/400/320" alt="Portofolio 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Feed Instagram Cafe</h3>
+                        <p class="text-gray-600 mb-4">Desain konten Instagram yang konsisten dan menarik untuk brand cafe lokal.</p>
+                        <a href="order.html" class="inline-block bg-indigo-600 text-white py-2 px-6 rounded-lg font-medium hover:bg-indigo-700 transition">Pesan Serupa</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/api/placeholder/400/320" alt="Portofolio 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Presentasi Perusahaan</h3>
+                        <p class="text-gray-600 mb-4">Desain presentasi PowerPoint profesional untuk perusahaan teknologi.</p>
+                        <a href="order.html" class="inline-block bg-indigo-600 text-white py-2 px-6 rounded-lg font-medium hover:bg-indigo-700 transition">Pesan Serupa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Klien Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Testimoni dari klien yang telah menggunakan jasa kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-indigo-600 font-semibold">AB</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ahmad Budi</h4>
+                            <p class="text-gray-600 text-sm">PT Maju Bersama</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Hasil desainnya sangat memuaskan dan sesuai dengan ekspektasi kami. Proses pengerjaannya juga cepat dan komunikasinya sangat baik."</p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-indigo-600 font-semibold">SR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Siti Rahmah</h4>
+                            <p class="text-gray-600 text-sm">Bumbu Dapur Resto</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Desain feed Instagram kami jadi lebih menarik dan engagement meningkat drastis. Terima kasih DesignArt Studio!"</p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-indigo-600 font-semibold">DR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Dian Rahmat</h4>
+                            <p class="text-gray-600 text-sm">Founder Startup Tech</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Presentasi PowerPoint yang dibuat sangat profesional dan membantu kami mendapatkan investor. Revisi cepat dan tim yang responsif."</p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 hero-gradient text-white">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap Tingkatkan Kualitas Desain Anda?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Hubungi kami sekarang dan dapatkan konsultasi gratis untuk kebutuhan desain Anda</p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                <a href="contact.html" class="bg-white text-indigo-600 py-3 px-8 rounded-lg font-medium hover:bg-gray-100 transition">Konsultasi Gratis</a>
+                <a href="order.html" class="bg-indigo-800 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-900 border border-white transition">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">DesignArt Studio</h3>
+                    <p class="text-gray-400 mb-4">Solusi desain kreatif untuk meningkatkan brand dan bisnis Anda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Layanan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#video" class="text-gray-400 hover:text-white transition">Jasa Video Konten</a></li>
+                        <li><a href="services.html#content" class="text-gray-400 hover:text-white transition">Jasa Desain Konten</a></li>
+                        <li><a href="services.html#poster" class="text-gray-400 hover:text-white transition">Desain Poster</a></li>
+                        <li><a href="services.html#ppt" class="text-gray-400 hover:text-white transition">Desain Presentasi PPT</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">Profil Perusahaan</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-white transition">Tim Kami</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition">Portofolio</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hubungi Kami</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">Jl. Kreatif No. 123, Jakarta Selatan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">info@designartstudio.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2025 DesignArt Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

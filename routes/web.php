@@ -18,9 +18,13 @@ use App\Http\Controllers\User\ServiceController;
 use App\Http\Controllers\User\PortofolioController;
 use App\Http\Controllers\User\OrderController;
 
+
 // Guest/Public Routes
 Route::get('/', function () {
-    return view('user.home');
+    $services = \App\Models\Service::all();
+    $portfolios = \App\Models\Portofolio::with('service')->latest()->take(3)->get();
+    
+    return view('user.home', compact('services', 'portfolios'));
 })->name('home');
 
 // Auth Routes

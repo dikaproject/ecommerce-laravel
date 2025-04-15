@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - DesignArt Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to right, #4F46E5, #7C3AED);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 fixed w-full z-50">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">DesignArt Studio</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="services.html" class="text-indigo-600 font-medium">Layanan</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-600 transition">Portofolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Kontak</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-inner">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="services.html" class="text-indigo-600 font-medium">Layanan</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-indigo-600 transition">Portofolio</a>
+                <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Layanan Kami</h1>
+            <p class="text-xl max-w-3xl mx-auto">Kami menawarkan berbagai layanan desain profesional untuk memenuhi kebutuhan bisnis Anda</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <!-- Video Content Service -->
+            <div id="video" class="flex flex-col md:flex-row items-center mb-20 scroll-mt-32">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-3xl text-indigo-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Jasa Video Konten</h2>
+                    <p class="text-gray-600 mb-6">Tingkatkan engagement audiens Anda dengan video konten yang menarik dan profesional. Tim kreatif kami akan membantu Anda membuat video yang sesuai dengan kebutuhan dan brand Anda.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Video promosi untuk produk dan layanan</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Konten video untuk media sosial</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Video tutorial dan How-to</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Motion graphics dan animasi</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">Basic Package</span>
+                            <span class="text-indigo-600 font-semibold">Rp 1.500.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">Standard Package</span>
+                            <span class="text-indigo-600 font-semibold">Rp 3.000.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">Premium Package</span>
+                            <span class="text-indigo-600 font-semibold">Rp 5.000.000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="order.html?service=video" class="bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition inline-block">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="/api/placeholder/600/400" alt="Video Content Service" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+            
+            <!-- Content Design Service -->
+            <div id="content" class="flex flex-col md:flex-row-reverse items-center mb-20 scroll-mt-32">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pl-8">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-3xl text-indigo-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Jasa Desain Konten</h2>
+                    <p class="text-gray-600 mb-6">Buat konten visual yang menarik dan konsisten untuk brand Anda. Kami membantu Anda membuat desain konten yang sesuai dengan identitas brand dan target audiens Anda.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Desain feed Instagram yang konsisten</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Konten untuk Facebook, Twitter, dan platform lainnya</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Desain infografis dan visual storytelling</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Konten untuk website dan blog</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">5 Desain</span>
+                            <span class="text-indigo-600 font-semibold">Rp 750.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">10 Desain</span>
+                            <span class="text-indigo-600 font-semibold">Rp 1.400.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">20 Desain</span>
+                            <span class="text-indigo-600 font-semibold">Rp 2.500.000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="order.html?service=content" class="bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition inline-block">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="/api/placeholder/600/400" alt="Content Design Service" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+            
+            <!-- Poster Design Service -->
+            <div id="poster" class="flex flex-col md:flex-row items-center mb-20 scroll-mt-32">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-images text-3xl text-indigo-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Desain Poster</h2>
+                    <p class="text-gray-600 mb-6">Poster yang eye-catching dan efektif untuk promosi, event, dan kebutuhan marketing offline Anda. Desain poster kami dirancang untuk menarik perhatian dan menyampaikan pesan dengan jelas.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Poster untuk promosi produk dan layanan</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Poster event dan acara</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Banner dan spanduk</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Billboard dan media luar ruang</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">Basic Design</span>
+                            <span class="text-indigo-600 font-semibold">Rp 500.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">Standard Design</span>
+                            <span class="text-indigo-600 font-semibold">Rp 800.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">Premium Design</span>
+                            <span class="text-indigo-600 font-semibold">Rp 1.200.000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="order.html?service=poster" class="bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition inline-block">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="/api/placeholder/600/400" alt="Poster Design Service" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+            
+            <!-- PPT Design Service -->
+            <div id="ppt" class="flex flex-col md:flex-row-reverse items-center scroll-mt-32">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pl-8">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-3xl text-indigo-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Desain Presentasi PPT</h2>
+                    <p class="text-gray-600 mb-6">Presentasi PowerPoint profesional untuk bisnis, pendidikan, dan keperluan lainnya. Buat presentasi yang menarik dan efektif untuk menyampaikan ide dan informasi Anda.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Presentasi perusahaan dan bisnis</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Presentasi laporan dan analisis</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Presentasi untuk pitching dan investor</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Template slide yang konsisten dengan brand</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">10 Slides</span>
+                            <span class="text-indigo-600 font-semibold">Rp 800.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">20 Slides</span>
+                            <span class="text-indigo-600 font-semibold">Rp 1.500.000</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 font-medium">30 Slides</span>
+                            <span class="text-indigo-600 font-semibold">Rp 2.000.000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="order.html?service=ppt" class="bg-indigo-600 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-700 transition inline-block">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="/api/placeholder/600/400" alt="PPT Design Service" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Proses Kerja Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Pengalaman bekerja dengan kami yang mudah dan transparan</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-lg p-6 shadow-md relative">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto text-white font-bold">1</div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Konsultasi</h3>
+                    <p class="text-gray-600 text-center">Diskusikan kebutuhan dan tujuan Anda bersama tim kami secara detail.</p>
+                    <div class="hidden md:block absolute top-12 right-0 transform translate-x-1/2">
+                        <i class="fas fa-long-arrow-alt-right text-3xl text-indigo-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white rounded-lg p-6 shadow-md relative">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto text-white font-bold">2</div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Persetujuan Konsep</h3>
+                    <p class="text-gray-600 text-center">Kami akan memberikan konsep awal untuk disetujui sebelum melanjutkan.</p>
+                    <div class="hidden md:block absolute top-12 right-0 transform translate-x-1/2">
+                        <i class="fas fa-long-arrow-alt-right text-3xl text-indigo-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white rounded-lg p-6 shadow-md relative">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto text-white font-bold">3</div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Pengerjaan</h3>
+                    <p class="text-gray-600 text-center">Tim kami akan mengerjakan proyek dengan detail dan sesuai timeline.</p>
+                    <div class="hidden md:block absolute top-12 right-0 transform translate-x-1/2">
+                        <i class="fas fa-long-arrow-alt-right text-3xl text-indigo-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto text-white font-bold">4</div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Hasil & Revisi</h3>
+                    <p class="text-gray-600 text-center">Anda akan menerima hasil akhir dengan kesempatan revisi sesuai paket.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Jawaban untuk pertanyaan umum tentang layanan kami</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Berapa lama waktu pengerjaan untuk setiap layanan?</h3>
+                    <p class="text-gray-600">Waktu pengerjaan bervariasi tergantung pada kompleksitas proyek dan jenis layanan. Secara umum, untuk desain konten dan poster membutuhkan waktu 3-5 hari kerja, video konten 7-14 hari kerja, dan desain PPT 5-7 hari kerja. Kami akan memberikan estimasi yang lebih akurat setelah konsultasi.</p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Berapa kali revisi yang bisa saya minta?</h3>
+                    <p class="text-gray-600">Jumlah revisi tergantung pada paket yang Anda pilih. Paket basic biasanya mendapatkan 2 kali revisi, paket standard 3 kali revisi, dan paket premium 5 kali revisi. Revisi tambahan dapat dilakukan dengan biaya tambahan.</p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Apakah saya mendapatkan file source dari desain?</h3>
+                    <p class="text-gray-600">Ya, Anda akan mendapatkan file source (seperti PSD, AI, atau file project lainnya) untuk paket standard dan premium. Untuk paket basic, Anda akan mendapatkan file output final (seperti JPG, PNG, PDF, atau MP4).</p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Bagaimana cara melakukan pembayaran?</h3>
+                    <p class="text-gray-600">Kami menerima pembayaran melalui transfer bank dan QRIS. Untuk proyek dengan nilai di atas Rp 2.000.000, kami memerlukan down payment sebesar 50% di awal, dan pelunasan setelah proyek selesai sebelum file final dikirimkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 hero-gradient text-white">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap Tingkatkan Kualitas Desain Anda?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Hubungi kami sekarang dan dapatkan konsultasi gratis untuk kebutuhan desain Anda</p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                <a href="contact.html" class="bg-white text-indigo-600 py-3 px-8 rounded-lg font-medium hover:bg-gray-100 transition">Konsultasi Gratis</a>
+                <a href="order.html" class="bg-indigo-800 text-white py-3 px-8 rounded-lg font-medium hover:bg-indigo-900 border border-white transition">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">DesignArt Studio</h3>
+                    <p class="text-gray-400 mb-4">Solusi desain kreatif untuk meningkatkan brand dan bisnis Anda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Layanan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#video" class="text-gray-400 hover:text-white transition">Jasa Video Konten</a></li>
+                        <li><a href="services.html#content" class="text-gray-400 hover:text-white transition">Jasa Desain Konten</a></li>
+                        <li><a href="services.html#poster" class="text-gray-400 hover:text-white transition">Desain Poster</a></li>
+                        <li><a href="services.html#ppt" class="text-gray-400 hover:text-white transition">Desain Presentasi PPT</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tentang Kami</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">Profil Perusahaan</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-white transition">Tim Kami</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition">Portofolio</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hubungi Kami</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">Jl. Kreatif No. 123, Jakarta Selatan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-indigo-400"></i>
+                            <span class="text-gray-400">info@designartstudio.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2025 DesignArt Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
